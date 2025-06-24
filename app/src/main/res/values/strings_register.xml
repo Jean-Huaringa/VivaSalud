@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_documento">Documento</string>
+    <string name="hint_documento">Ingresa tu numero de documento</string>
+
+    <string name="label_tipo_documento">Tipo de Documento</string>
+    <string name="hint_tipo_documento">Elige tu tipo de documento</string>
+
+    <string name="label_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="hint_fecha_nacimiento">Ingresa su fecha de nacimiento</string>
+
+    <string name="label_nombre">Nombres</string>
+    <string name="hint_nombre">Ingresa tu nombre</string>
+
+    <string name="label_apellido_paterno">Apellido paterno</string>
+    <string name="hint_apellido_paterno">Ingresa tu apellido paterno</string>
+
+    <string name="label_apellido_materno">Apellido materno</string>
+    <string name="hint_apellido_materno">Ingresa tu apellido materno</string>
+
+    <string name="label_sexo">Sexo</string>
+    <string name="hint_sexo">Selecciona tu sexo</string>
+
+    <string name="label_seguro">Selecciona el seguro que tienes</string>
+    <string name="hint_seguro">Selecciona un seguro</string>
+
+    <string name="label_pais">País</string>
+    <string name="hint_pais">Elige un país</string>
+
+    <string name="label_departamento">Departamento</string>
+    <string name="hint_departamento">Elige un departamento</string>
+
+    <string name="label_provincia">Provincia</string>
+    <string name="hint_provincia">Elige una provincia</string>
+
+    <string name="label_distrito">Distrito</string>
+    <string name="hint_distrito">Elige tu distrito</string>
+
+    <string name="label_domicilio">Domicilio</string>
+    <string name="hint_domicilio">Ingresa tu domicilio</string>
+
+    <string name="label_contrasena">Ingresa tu clave</string>
+    <string name="hint_contrasena">Ingresa tu clave</string>
+
+    <string name="label_confirmar_contrasena">Vuelve a ingresar la misma clave</string>
+    <string name="hint_confirmar_contrasena">Vuelve a ingresar la misma clave</string>
+
+    <string name="label_checkbox">Recordar mi documento y contrasena</string>
+    <string name="label_checkbox_terminos">Acepto los Términos y Condiciones y declaro conocer la Politica de Privacidad</string>
+
+    <string name="btn_crear_cuenta_uno">¿No tienes cuenta?</string>
+    <string name="btn_crear_cuenta_dos">Crear una</string>
+
+    <string name="btn_siguiente">Siguiente paso</string>
+    <string name="btn_confirmar">Enviar</string>
+</resources>

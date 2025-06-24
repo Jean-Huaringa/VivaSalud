@@ -1,0 +1,22 @@
+# Archivos generados por Android Studio
+.idea/
+.gradle/
+build/
+*.iml
+*.log
+local.properties
+captures/
+.DS_Store
+*.apk
+*.ap_
+.cxx/
+*.hprof
+
+# Archivos temporales de sistema operativo
+Thumbs.db
+ehthumbs.db
+*.swp
+*~
+
+# Archivos de configuración personal
+.vscode/
