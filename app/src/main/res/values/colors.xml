@@ -5,5 +5,6 @@
 
     <color name="blue">#2E83EC</color>
     <color name="dark">#4F000000</color>
+    <color name="ligth">#4FFFFFFF</color>
     <color name="trasparent">#00FFFFFF</color>
 </resources>

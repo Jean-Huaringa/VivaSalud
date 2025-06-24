@@ -43,7 +43,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputName"
+                        android:id="@+id/etName"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_nombre" />
 
@@ -61,7 +61,7 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputPaternalSurname"
+                        android:id="@+id/etPaternalSurname"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_apellido_paterno" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +76,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputMaternalSurname"
+                        android:id="@+id/etMaternalSurname"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_apellido_materno" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +92,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/sexoSpinner"
+                        android:id="@+id/etSexo"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_sexo" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -108,7 +108,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/seguroSpinner"
+                        android:id="@+id/spSeguro"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_seguro" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -124,7 +124,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/paisSpinner"
+                        android:id="@+id/spPais"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_pais" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -140,7 +140,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/departamentoSpinner"
+                        android:id="@+id/spDepartamento"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_departamento" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -156,7 +156,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/provinciaSpinner"
+                        android:id="@+id/spProvincia"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_provincia" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -172,7 +172,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <AutoCompleteTextView
-                        android:id="@+id/distritoSpinner"
+                        android:id="@+id/spDistrito"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_distrito" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -188,6 +188,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDomicilio"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_domicilio" />
                 </com.google.android.material.textfield.TextInputLayout>

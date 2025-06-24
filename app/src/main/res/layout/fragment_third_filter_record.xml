@@ -41,6 +41,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/spClave"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_contrasena"
                         android:inputType="textPassword" />
@@ -57,6 +58,7 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/spRepeatClave"
                         style="@style/MyEditTextStyle"
                         android:hint="@string/hint_confirmar_contrasena"
                         android:inputType="textPassword" />
