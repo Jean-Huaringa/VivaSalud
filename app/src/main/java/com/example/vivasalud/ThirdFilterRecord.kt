@@ -28,6 +28,7 @@ class ThirdFilterRecord : Fragment() {
         val etRepetirClave = view.findViewById<TextInputEditText>(R.id.spRepeatClave)
         val btnRegistrar = view.findViewById<MaterialButton>(R.id.btnRegistrar)
 
+
         btnRegistrar.setOnClickListener {
             val clave = etClave.text.toString()
             val repetirClave = etRepetirClave.text.toString()

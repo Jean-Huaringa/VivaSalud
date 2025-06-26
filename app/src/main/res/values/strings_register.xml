@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="label_documento">Documento</string>
     <string name="hint_documento">Ingresa tu numero de documento</string>
 
@@ -53,4 +53,10 @@
 
     <string name="btn_siguiente">Siguiente paso</string>
     <string name="btn_confirmar">Enviar</string>
+
+    <string-array name="hello_array" tools:ignore="ExtraTranslation">
+        <item>Peru</item>
+        <item>Argentina</item>
+        <item>Chile</item>
+    </string-array>
 </resources>

@@ -13,7 +13,7 @@ class RegisterActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun openSecondFilterRecord() {
+    fun openSecondFilterRecord(name: JvmName) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.contenedorRegistro, SecondFilterRecord())
             .addToBackStack(null)

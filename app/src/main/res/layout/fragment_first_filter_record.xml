@@ -41,7 +41,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spTypeDocument"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_tipo_documento" />
@@ -93,6 +93,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSiguientePaso"
             style="@style/MyButtonStyle"
+            android:enabled="false"
             android:text="@string/btn_siguiente"
             app:cornerRadius="10dp" />
     </LinearLayout>

@@ -1,13 +1,14 @@
 package com.example.vivasalud
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
@@ -22,17 +23,29 @@ class FirstFilterRecordFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_first_filter_record, container, false)
     }
 
+
+    private lateinit var btnSiguiente: MaterialButton
+    private lateinit var spTypeDocument: AutoCompleteTextView
+    private lateinit var etDocument: TextInputEditText
+    private lateinit var etBirthdate: TextInputEditText
+    private lateinit var checkBox: MaterialCheckBox
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnSiguiente = view.findViewById<MaterialButton>(R.id.btnSiguientePaso)
+        btnSiguiente = view.findViewById(R.id.btnSiguientePaso)
+        spTypeDocument = view.findViewById(R.id.spTypeDocument)
+        etDocument = view.findViewById(R.id.etDocument)
+        etBirthdate = view.findViewById(R.id.etBirthdate)
+        checkBox = view.findViewById(R.id.checkbox)
 
-        val spTypeDocument = view.findViewById<AutoCompleteTextView>(R.id.spTypeDocument)
-        val etDocument = view.findViewById<TextInputEditText>(R.id.etDocument)
-        val etBirthdate = view.findViewById<TextInputEditText>(R.id.etBirthdate)
-        val checkBox = view.findViewById<MaterialCheckBox>(R.id.checkbox)
-        val btnNext = view.findViewById<MaterialButton>(R.id.btnSiguientePaso)
+        val typeDocument = listOf("DNI", "CE", "Pasaporte")
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, typeDocument)
+        spTypeDocument.setAdapter(adapter)
 
+        checkBox.setOnCheckedChangeListener { _, _ ->
+            validarCampos()
+        }
 
         btnSiguiente.setOnClickListener {
             val typeDoc = spTypeDocument.text.toString()
@@ -40,10 +53,56 @@ class FirstFilterRecordFragment : Fragment() {
             val birthdate = etBirthdate.text.toString()
             val acceptedTerms = checkBox.isChecked
 
+            if (acceptedTerms) {
+                val usuario = Usuario(
+                    name = "",
+                    paternalSurname = "",
+                    maternalSurname = "",
+                    sexo = "",
+                    seguro = "",
+                    pais = "",
+                    department = "",
+                    province = "",
+                    district = "",
+                    home = "",
+                    typeDocument = typeDoc,
+                    numberDocument = document,
+                    birthdate = birthdate
+                )
 
-            Log.d("Paso1", "Tipo: $typeDoc, Documento: $document, Fecha: $birthdate, Términos: $acceptedTerms")
+                val bundle = Bundle().apply {
+                    putParcelable("usuario", usuario)
+                }
 
-            (activity as RegisterActivity).openSecondFilterRecord()
+                val nextFragment = SecondFilterRecord()
+
+                nextFragment.arguments = bundle
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.contenedorRegistro, nextFragment)
+                    .addToBackStack(null)
+                    .commit()
+
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Para continuar debe aceptar los términos y condiciones",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
+
+        validarCampos()
     }
+
+    private fun validarCampos() {
+        val typeDocument = spTypeDocument.text?.toString()?.trim().orEmpty()
+        val document = etDocument.text?.toString()?.trim().orEmpty()
+        val birthdate = etBirthdate.text?.toString()?.trim().orEmpty()
+        val acceptedTerms = checkBox.isChecked
+
+        // btnSiguiente.isEnabled = typeDocument.isNotEmpty() && document.isNotEmpty() && birthdate.isNotEmpty() && acceptedTerms
+        btnSiguiente.isEnabled = acceptedTerms
+    }
+
 }

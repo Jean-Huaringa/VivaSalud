@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SecondFilterRecord">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,11 +91,10 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
-
-                    <AutoCompleteTextView
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/etSexo"
                         style="@style/AutoCompleteTextStyle"
-                        android:hint="@string/hint_sexo" />
+                        android:hint="@string/hint_sexo"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -107,7 +107,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spSeguro"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_seguro" />
@@ -123,7 +123,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spPais"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_pais" />
@@ -139,7 +139,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spDepartamento"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_departamento" />
@@ -155,7 +155,8 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spProvincia"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_provincia" />
@@ -171,7 +172,8 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <AutoCompleteTextView
+
+                    <com.example.vivasalud.CustomAutoCompleteTextView
                         android:id="@+id/spDistrito"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_distrito" />
@@ -198,6 +200,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSiguiente"
             style="@style/MyButtonStyle"
+            android:enabled="false"
             android:text="@string/btn_siguiente"
             app:cornerRadius="10dp" />
     </LinearLayout>
