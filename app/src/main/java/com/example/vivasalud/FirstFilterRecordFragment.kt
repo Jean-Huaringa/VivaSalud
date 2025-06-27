@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
@@ -42,6 +44,10 @@ class FirstFilterRecordFragment : Fragment() {
         val typeDocument = listOf("DNI", "CE", "Pasaporte")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, typeDocument)
         spTypeDocument.setAdapter(adapter)
+        spTypeDocument.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spTypeDocument.windowToken, 0)
+        }
 
         checkBox.setOnCheckedChangeListener { _, _ ->
             validarCampos()
