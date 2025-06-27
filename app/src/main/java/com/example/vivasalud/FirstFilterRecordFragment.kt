@@ -1,6 +1,5 @@
 package com.example.vivasalud
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -80,7 +79,7 @@ class FirstFilterRecordFragment : Fragment() {
                     putParcelable("usuario", usuario)
                 }
 
-                val nextFragment = SecondFilterRecord()
+                val nextFragment = SecondFilterRecordFragment()
 
                 nextFragment.arguments = bundle
 

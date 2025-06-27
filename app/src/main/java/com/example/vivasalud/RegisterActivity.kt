@@ -15,14 +15,14 @@ class RegisterActivity : AppCompatActivity() {
 
     fun openSecondFilterRecord(name: JvmName) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.contenedorRegistro, SecondFilterRecord())
+            .replace(R.id.contenedorRegistro, SecondFilterRecordFragment())
             .addToBackStack(null)
             .commit()
     }
 
     fun openThirdFilterRecord() {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.contenedorRegistro, ThirdFilterRecord())
+            .replace(R.id.contenedorRegistro, ThirdFilterRecordFragment())
             .addToBackStack(null)
             .commit()
     }

@@ -1,12 +1,9 @@
 package com.example.vivasalud
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -18,7 +15,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
 
-class SecondFilterRecord : Fragment() {
+class SecondFilterRecordFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -110,6 +107,32 @@ class SecondFilterRecord : Fragment() {
             val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
             im?.hideSoftInputFromWindow(etSexo.windowToken, 0)
         }
+
+        spSeguro.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spSeguro.windowToken, 0)
+        }
+
+        spPais.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spPais.windowToken, 0)
+        }
+
+        spDepartamento.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spDepartamento.windowToken, 0)
+        }
+
+        spProvincia.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spProvincia.windowToken, 0)
+        }
+
+        spDistrito.setOnClickListener {
+            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+            im?.hideSoftInputFromWindow(spDistrito.windowToken, 0)
+        }
+
 
 
         etName.addTextChangedListener{ validarCampos() }
