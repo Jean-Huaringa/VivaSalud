@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.vivasalud.LogInFragment"
+        android:name="com.example.vivasalud.ui.login.LogInFragment"
         android:label="LogInFragment">
         <action
             android:id="@+id/action_LogInFragment_to_FirstFilterRecordFragment"
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_HomeFragment_to_CreateCitaFragment"
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/infoUserFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="InfoUserFragment">
         <action
             android:id="@+id/action_infoUserFragment_to_updateUserFragment"
@@ -43,13 +43,13 @@
 
     <fragment
         android:id="@+id/updateUserFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="UpdateUserFragment">
     </fragment>
 
     <fragment
         android:id="@+id/createCitaFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="CreateCitaFragment">
         <action
             android:id="@+id/action_createCitaFragment_to_seleccionDoctorFragment"
@@ -61,7 +61,7 @@
 
     <fragment
         android:id="@+id/seleccionDoctorFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="SeleccionDoctorFragment">
         <action
             android:id="@+id/action_SeleccionDoctorFragment_to_SeleccionHorarioFragment"
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/seleccionHorarioFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="SeleccionHorarioFragment">
         <action
             android:id="@+id/action_SeleccionDoctorFragment_to_ConfirmacionCitaFragment"
@@ -77,7 +77,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmacionCitaFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="ConfirmacionCitaFragment">
         <action
             android:id="@+id/action_ConfirmacionCitaFragment_to_ListCitaFragment"
@@ -87,7 +87,7 @@
 
     <fragment
         android:id="@+id/seleccionLugarFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="SeleccionLugarFragment">
         <action
             android:id="@+id/action_SeleccionLugarFragment_to_SeleccionDoctorFragment"
@@ -96,13 +96,13 @@
 
     <fragment
         android:id="@+id/listCitaFragment"
-        android:name="com.example.vivasalud.HomeFragment"
+        android:name="com.example.vivasalud.ui.home.HomeFragment"
         android:label="ListCitaFragment">
     </fragment>
 
     <fragment
         android:id="@+id/firstFilterRecordFragment"
-        android:name="com.example.vivasalud.FirstFilterRecordFragment"
+        android:name="com.example.vivasalud.ui.register.FirstFilterRecordFragment"
         android:label="FirstFilterRecordFragment">
         <action
             android:id="@+id/action_firstFragment_to_secondFilterRecordFragment"
@@ -111,7 +111,7 @@
 
     <fragment
         android:id="@+id/secondFilterRecordFragment"
-        android:name="com.example.vivasalud.SecondFilterRecordFragment"
+        android:name="com.example.vivasalud.ui.register.SecondFilterRecordFragment"
         android:label="SecondFilterRecordFragment">
         <action
             android:id="@+id/action_secondFragment_to_thirdFilterRecordFragment"
@@ -120,7 +120,7 @@
 
     <fragment
         android:id="@+id/thirdFilterRecordFragment"
-        android:name="com.example.vivasalud.ThirdFilterRecordFragment"
+        android:name="com.example.vivasalud.ui.register.ThirdFilterRecordFragment"
         android:label="ThirdFilterRecordFragment">
     </fragment>
 </navigation>

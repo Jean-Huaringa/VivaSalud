@@ -1,4 +1,4 @@
-package com.example.vivasalud
+package com.example.vivasalud.ui.components
 
 
 import android.content.Context
@@ -6,6 +6,8 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.vivasalud.R
+
 class ItemCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null

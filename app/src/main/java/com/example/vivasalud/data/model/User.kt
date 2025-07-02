@@ -1,10 +1,14 @@
-package com.example.vivasalud
+package com.example.vivasalud.data.model
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Usuario(
+@Entity(tableName= "tb_user")
+data class User(
+    @PrimaryKey val id: Int,
     var name: String = "",
     var paternalSurname: String = "",
     var maternalSurname: String = "",

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFilterRecordFragment">
+    tools:context=".ui.register.FirstFilterRecordFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <com.example.vivasalud.CustomAutoCompleteTextView
+                    <com.example.vivasalud.ui.components.CustomAutoCompleteTextView
                         android:id="@+id/spTypeDocument"
                         style="@style/AutoCompleteTextStyle"
                         android:hint="@string/hint_tipo_documento" />

@@ -1,4 +1,4 @@
-package com.example.vivasalud
+package com.example.vivasalud.ui.components
 
 import android.content.Context
 import android.util.AttributeSet

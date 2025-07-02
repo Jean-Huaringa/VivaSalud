@@ -1,16 +1,13 @@
-package com.example.vivasalud
+package com.example.vivasalud.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import com.example.vivasalud.R
 import com.google.android.material.button.MaterialButton
 
 class LogInFragment : Fragment() {
