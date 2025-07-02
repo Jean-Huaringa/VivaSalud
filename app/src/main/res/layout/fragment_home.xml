@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <include layout="@layout/item_header" />
+
+        <!-- Cards -->
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="center">
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Agendar cita" />
+
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Agendar chequeo" />
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Dr. Online" />
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Medico a domicilio" />
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Mis citas" />
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Mis examenes" />
+
+            <com.example.vivasalud.ItemCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_menubar"
+                app:cardTitle="Grupo Familiar" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </LinearLayout>
+
+</ScrollView>

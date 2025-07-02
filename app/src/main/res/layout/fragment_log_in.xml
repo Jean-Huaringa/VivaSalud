@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogInFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/center_icon"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:contentDescription="@string/ic_app_name"
+                android:src="@drawable/ic_viva_salud_foreground"
+                app:tint="@color/blue" />
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutOne"
+                    style="@style/InputLinearLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        style="@style/InputTextViewStyle"
+                        android:text="@string/label_tipo_documento" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
+
+                        <com.example.vivasalud.CustomAutoCompleteTextView
+                            android:id="@+id/spTypeDocuments"
+                            style="@style/AutoCompleteTextStyle"
+                            android:hint="@string/hint_tipo_documento" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutTwo"
+                    style="@style/InputLinearLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/InputTextViewStyle"
+                        android:text="@string/label_documento" />
+
+                    <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/MyEditTextStyle"
+                            android:hint="@string/hint_documento"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutThree"
+                    style="@style/InputLinearLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/claveView"
+                        style="@style/InputTextViewStyle"
+                        android:text="@string/label_contrasena" />
+
+                    <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/MyEditTextStyle"
+                            android:hint="@string/hint_contrasena"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_checkbox"
+                android:textAlignment="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnviar"
+                style="@style/MyButtonStyle"
+                android:text="@string/btn_confirmar"
+                app:cornerRadius="10dp" />
+
+
+            <LinearLayout
+                android:id="@+id/layoutRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/btn_crear_cuenta_uno"
+                    android:textColor="@color/dark"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/btnCreateAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="@string/btn_crear_cuenta_dos"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

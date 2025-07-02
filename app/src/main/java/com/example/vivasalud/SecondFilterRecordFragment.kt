@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -69,6 +70,26 @@ class SecondFilterRecordFragment : Fragment() {
             val provincia = spProvincia.text.toString()
             val distrito = spDistrito.text.toString()
             val domicilio = etDomicilio.text.toString()
+
+            usuario?.let {
+                it.name = name
+                it.paternalSurname = paterno
+                it.maternalSurname = materno
+                it.sexo = sexo
+                it.seguro = seguro
+                it.pais = pais
+                it.department = departamento
+                it.province = provincia
+                it.district = distrito
+                it.home = domicilio
+            }
+
+            val bundle = Bundle().apply {
+                putParcelable("usuario_modificado", usuario)
+            }
+
+            findNavController().navigate(R.id.thirdFilterRecordFragment, bundle)
+
         }
 
 

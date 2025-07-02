@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
@@ -60,16 +61,6 @@ class FirstFilterRecordFragment : Fragment() {
 
             if (acceptedTerms) {
                 val usuario = Usuario(
-                    name = "",
-                    paternalSurname = "",
-                    maternalSurname = "",
-                    sexo = "",
-                    seguro = "",
-                    pais = "",
-                    department = "",
-                    province = "",
-                    district = "",
-                    home = "",
                     typeDocument = typeDoc,
                     numberDocument = document,
                     birthdate = birthdate
@@ -79,14 +70,10 @@ class FirstFilterRecordFragment : Fragment() {
                     putParcelable("usuario", usuario)
                 }
 
-                val nextFragment = SecondFilterRecordFragment()
-
-                nextFragment.arguments = bundle
-
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.contenedorRegistro, nextFragment)
-                    .addToBackStack(null)
-                    .commit()
+                findNavController().navigate(
+                    R.id.secondFilterRecordFragment,
+                    bundle
+                )
 
             } else {
                 Toast.makeText(

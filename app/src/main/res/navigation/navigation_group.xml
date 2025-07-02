@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_nav"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.vivasalud.LogInFragment"
+        android:label="LogInFragment">
+        <action
+            android:id="@+id/action_LogInFragment_to_FirstFilterRecordFragment"
+            app:destination="@id/firstFilterRecordFragment" />
+        <action
+            android:id="@+id/action_LogInFragment_to_HomeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_infoUserFragment"
+            app:destination="@id/infoUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_HomeFragment_to_CreateCitaFragment"
+            app:destination="@id/createCitaFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ListCitaFragment"
+            app:destination="@id/listCitaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoUserFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="InfoUserFragment">
+        <action
+            android:id="@+id/action_infoUserFragment_to_updateUserFragment"
+            app:destination="@id/updateUserFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/updateUserFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="UpdateUserFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/createCitaFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="CreateCitaFragment">
+        <action
+            android:id="@+id/action_createCitaFragment_to_seleccionDoctorFragment"
+            app:destination="@id/seleccionDoctorFragment" />
+        <action
+            android:id="@+id/action_createCitaFragment_to_seleccionLugarFragment"
+            app:destination="@id/seleccionLugarFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seleccionDoctorFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="SeleccionDoctorFragment">
+        <action
+            android:id="@+id/action_SeleccionDoctorFragment_to_SeleccionHorarioFragment"
+            app:destination="@id/seleccionHorarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seleccionHorarioFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="SeleccionHorarioFragment">
+        <action
+            android:id="@+id/action_SeleccionDoctorFragment_to_ConfirmacionCitaFragment"
+            app:destination="@id/confirmacionCitaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmacionCitaFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="ConfirmacionCitaFragment">
+        <action
+            android:id="@+id/action_ConfirmacionCitaFragment_to_ListCitaFragment"
+            app:destination="@id/listCitaFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/seleccionLugarFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="SeleccionLugarFragment">
+        <action
+            android:id="@+id/action_SeleccionLugarFragment_to_SeleccionDoctorFragment"
+            app:destination="@id/seleccionDoctorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listCitaFragment"
+        android:name="com.example.vivasalud.HomeFragment"
+        android:label="ListCitaFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstFilterRecordFragment"
+        android:name="com.example.vivasalud.FirstFilterRecordFragment"
+        android:label="FirstFilterRecordFragment">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFilterRecordFragment"
+            app:destination="@id/secondFilterRecordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFilterRecordFragment"
+        android:name="com.example.vivasalud.SecondFilterRecordFragment"
+        android:label="SecondFilterRecordFragment">
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFilterRecordFragment"
+            app:destination="@id/thirdFilterRecordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thirdFilterRecordFragment"
+        android:name="com.example.vivasalud.ThirdFilterRecordFragment"
+        android:label="ThirdFilterRecordFragment">
+    </fragment>
+</navigation>

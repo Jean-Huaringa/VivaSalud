@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -24,6 +25,8 @@ class ThirdFilterRecordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val usuario = arguments?.getParcelable<Usuario>("usuario_modificado")
+
         val etClave = view.findViewById<TextInputEditText>(R.id.spClave)
         val etRepetirClave = view.findViewById<TextInputEditText>(R.id.spRepeatClave)
         val btnRegistrar = view.findViewById<MaterialButton>(R.id.btnRegistrar)
@@ -38,7 +41,11 @@ class ThirdFilterRecordFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            Log.d("Paso3", "Contraseña registrada correctamente: $clave")
+            usuario?.let {
+                it.password = clave
+            }
+
+            findNavController().popBackStack(R.id.logInFragment, false)
 
         }
     }

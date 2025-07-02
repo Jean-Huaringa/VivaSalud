@@ -22,9 +22,6 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistroActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.VivaSalud.SplashScreen">
