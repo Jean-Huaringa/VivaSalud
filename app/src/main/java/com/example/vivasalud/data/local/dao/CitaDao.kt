@@ -18,4 +18,7 @@ interface CitaDao {
     fun delete(cita: Cita)
     @Query("SELECT * FROM tb_cita WHERE id = :id")
     fun getCitaById(id: Int): Cita?
+
+    @Query("SELECT * FROM tb_cita")
+    fun getAllCitas(): MutableList<Cita>
 }

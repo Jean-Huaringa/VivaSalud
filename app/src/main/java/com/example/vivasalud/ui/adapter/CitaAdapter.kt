@@ -43,6 +43,37 @@ class CitaAdapter (
 
     }
 
+
+    // Método para establecer las citas
+    fun setCitas(citas: MutableList<Cita>) {
+        this.citas = citas
+        notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
+    }
+
+    // Método para agregar una cita
+    fun add(cita: Cita) {
+        citas.add(cita)
+        notifyItemInserted(citas.size - 1) // Notificar que se ha agregado un nuevo ítem
+    }
+
+    // Método para actualizar una cita
+    fun update(cita: Cita) {
+        val index = citas.indexOfFirst { it.id == cita.id } // Asumiendo que Cita tiene un campo id
+        if (index != -1) {
+            citas[index] = cita
+            notifyItemChanged(index) // Notificar que el ítem ha sido actualizado
+        }
+    }
+
+    // Método para eliminar una cita
+    fun delete(cita: Cita) {
+        val index = citas.indexOfFirst { it.id == cita.id } // Buscar la cita por id
+        if (index != -1) {
+            citas.removeAt(index)
+            notifyItemRemoved(index) // Notificar que el ítem ha sido eliminado
+        }
+    }
+
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemCardCitaBinding.bind(view)
 
