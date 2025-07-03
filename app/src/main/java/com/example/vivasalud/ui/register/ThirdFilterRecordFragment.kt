@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
-import com.example.vivasalud.data.model.Usuario
+import com.example.vivasalud.data.model.User
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -26,7 +26,7 @@ class ThirdFilterRecordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val usuario = arguments?.getParcelable<Usuario>("usuario_modificado")
+        val usuario = arguments?.getParcelable<User>("usuario_modificado")
 
         val etClave = view.findViewById<TextInputEditText>(R.id.spClave)
         val etRepetirClave = view.findViewById<TextInputEditText>(R.id.spRepeatClave)

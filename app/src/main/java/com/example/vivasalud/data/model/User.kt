@@ -1,6 +1,7 @@
 package com.example.vivasalud.data.model
 
 import android.os.Parcelable
+import android.view.View
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
@@ -8,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity(tableName= "tb_user")
 data class User(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0,
     var name: String = "",
     var paternalSurname: String = "",
     var maternalSurname: String = "",

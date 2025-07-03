@@ -10,11 +10,11 @@ import com.example.vivasalud.data.model.User
 @Dao
 interface UserDao {
     @Insert
-    suspend fun insert(user: User)
+    fun insert(user: User)
     @Update
-    suspend fun update(user: User)
+    fun update(user: User)
     @Delete
-    suspend fun delete(user: User)
+    fun delete(user: User)
     @Query("SELECT * FROM tb_user WHERE id = :id")
-    suspend fun getUserById(id: Int): User?
+    fun getUserById(id: Int): User?
 }

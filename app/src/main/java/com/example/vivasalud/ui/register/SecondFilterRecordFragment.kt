@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
-import com.example.vivasalud.data.model.Usuario
+import com.example.vivasalud.data.model.User
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -42,7 +42,7 @@ class SecondFilterRecordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val usuario = arguments?.getParcelable<Usuario>("usuario")
+        val usuario = arguments?.getParcelable<User>("usuario")
 
         usuario?.let {
             Log.d("USUARIO", "Tipo doc: ${it.typeDocument}, Doc: ${it.numberDocument}, Fecha: ${it.birthdate}")

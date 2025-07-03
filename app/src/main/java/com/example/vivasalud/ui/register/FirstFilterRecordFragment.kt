@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
-import com.example.vivasalud.data.model.Usuario
+import com.example.vivasalud.data.model.User
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
@@ -62,7 +62,7 @@ class FirstFilterRecordFragment : Fragment() {
             val acceptedTerms = checkBox.isChecked
 
             if (acceptedTerms) {
-                val usuario = Usuario(
+                val usuario = User(
                     typeDocument = typeDoc,
                     numberDocument = document,
                     birthdate = birthdate

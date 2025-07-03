@@ -11,8 +11,8 @@ import java.util.Date
 data class Cita(
     @PrimaryKey val id: Int,
     var name: String = "",
-    var day: Date,
-    var time: Date,
+    var day: String = "",
+    var time: String = "",
     var clinica: String = "",
     var docto: String = ""
 ) : Parcelable
