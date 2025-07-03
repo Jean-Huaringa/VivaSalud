@@ -17,7 +17,7 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun deleteUser(user:User){
         userDao.delete(user)
     }
-    suspend fun getByIdUser(id:Int): User?{
+    suspend fun getByIdUser(id:Long): User?{
         return userDao.getUserById(id)
     }
 }

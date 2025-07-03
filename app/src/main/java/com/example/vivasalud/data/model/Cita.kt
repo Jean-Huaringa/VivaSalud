@@ -13,6 +13,7 @@ data class Cita(
     var name: String = "",
     var day: String = "",
     var time: String = "",
+    var area: String = "",
     var clinica: String = "",
-    var docto: String = ""
+    var doctor: String = ""
 ) : Parcelable
