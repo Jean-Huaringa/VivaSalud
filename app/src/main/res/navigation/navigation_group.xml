@@ -29,11 +29,12 @@
         <action
             android:id="@+id/action_HomeFragment_to_ListCitaFragment"
             app:destination="@id/listCitaFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/infoUserFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.user.InfoUserFragment"
         android:label="InfoUserFragment">
         <action
             android:id="@+id/action_infoUserFragment_to_updateUserFragment"

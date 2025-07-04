@@ -56,4 +56,12 @@
         <item name="android:backgroundTint">@color/boton_color_estado</item>
     </style>
 
+    <style name="MyButtonStyleEliminar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/red</item>
+    </style>
+
 </resources>

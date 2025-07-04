@@ -1,14 +1,403 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.user.InfoUserFragment">
+    android:padding="16dp"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="25dp"
+            android:paddingTop="20dp">
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil del Usuario"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person" />
+
+            <LinearLayout style="@style/InputLinearLayoutStyle">
+                <TextView
+                    style="@style/InputTextViewStyle"
+                    android:text="@string/label_nombre" />
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        style="@style/MyEditTextStyle"
+                        android:hint="Nombre" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Apellido Paterno" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etApePat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Apellido Paterno" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Apellido Materno" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etApeMat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Apellido Materno" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Genero" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSexo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Genero" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Seguro" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSeguro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Seguro" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Pais" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPais"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Pais" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Departamento" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDepartamento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Departamento" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Provincia" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etProvincia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Provincia" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Distrito" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDistrito"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Distrito" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Direccion" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Direccion" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Tipo Documento" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTypeDocument"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Tipo Documento" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Numero Documento" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNumDocument"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="N° Documento" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        style="@style/InputTextViewStyle"
+                        android:text="Cumpleaños" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MyTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBirthday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/MyEditTextStyle"
+                            android:hint="Cumpleaños" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="24dp">
+
+                <Button
+                    android:id="@+id/btnActualizar"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Actualizar Perfil"
+                    android:layout_marginEnd="8dp"
+                    style="@style/MyButtonStyle"
+                    />
+
+                <Button
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar Perfil"
+                    android:layout_marginStart="8dp"
+                    style="@style/MyButtonStyleEliminar"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+</ScrollView>

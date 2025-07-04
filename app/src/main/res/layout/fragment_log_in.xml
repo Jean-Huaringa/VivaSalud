@@ -68,6 +68,7 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/MyEditTextStyle"
+                            android:id="@+id/etDocument"
                             android:hint="@string/hint_documento"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -86,6 +87,7 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/MyEditTextStyle"
+                            android:id="@+id/etPassword"
                             android:hint="@string/hint_contrasena"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>

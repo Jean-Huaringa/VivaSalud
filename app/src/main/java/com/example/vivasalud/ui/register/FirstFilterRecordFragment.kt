@@ -10,9 +10,15 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
+import com.example.vivasalud.data.local.database.AppDatabase
 import com.example.vivasalud.data.model.Usuario
+import com.example.vivasalud.data.repository.UserRepository
+import com.example.vivasalud.data.viewModel.RegistroViewModel
+import com.example.vivasalud.data.viewModel.RegistroViewModelFactory
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
@@ -20,13 +26,18 @@ import com.google.android.material.textfield.TextInputEditText
 
 class FirstFilterRecordFragment : Fragment() {
 
+    private val registroViewModel: RegistroViewModel by activityViewModels  {
+        val dao = AppDatabase.getDatabase(requireContext()).userDao()
+        val repository = UserRepository(dao)
+        RegistroViewModelFactory(repository)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_first_filter_record, container, false)
     }
-
 
     private lateinit var btnSiguiente: MaterialButton
     private lateinit var spTypeDocument: AutoCompleteTextView
@@ -43,9 +54,8 @@ class FirstFilterRecordFragment : Fragment() {
         etBirthdate = view.findViewById(R.id.etBirthdate)
         checkBox = view.findViewById(R.id.checkbox)
 
-        val typeDocument = listOf("DNI", "CE", "Pasaporte")
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, typeDocument)
-        spTypeDocument.setAdapter(adapter)
+        spTypeDocument.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("DNI", "CE", "Pasaporte")))
+
         spTypeDocument.setOnClickListener {
             val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
             im?.hideSoftInputFromWindow(spTypeDocument.windowToken, 0)
@@ -62,21 +72,9 @@ class FirstFilterRecordFragment : Fragment() {
             val acceptedTerms = checkBox.isChecked
 
             if (acceptedTerms) {
-                val usuario = Usuario(
-                    typeDocument = typeDoc,
-                    numberDocument = document,
-                    birthdate = birthdate
-                )
+                registroViewModel.filtroRegistroUno(typeDoc, document, birthdate)
 
-                val bundle = Bundle().apply {
-                    putParcelable("usuario", usuario)
-                }
-
-                findNavController().navigate(
-                    R.id.secondFilterRecordFragment,
-                    bundle
-                )
-
+                findNavController().navigate(R.id.secondFilterRecordFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -85,8 +83,6 @@ class FirstFilterRecordFragment : Fragment() {
                 ).show()
             }
         }
-
-        validarCampos()
     }
 
     private fun validarCampos() {
@@ -95,8 +91,10 @@ class FirstFilterRecordFragment : Fragment() {
         val birthdate = etBirthdate.text?.toString()?.trim().orEmpty()
         val acceptedTerms = checkBox.isChecked
 
-        // btnSiguiente.isEnabled = typeDocument.isNotEmpty() && document.isNotEmpty() && birthdate.isNotEmpty() && acceptedTerms
-        btnSiguiente.isEnabled = acceptedTerms
+        val documentoValido = document.length == 8 && document.all { it.isDigit() }
+
+
+        btnSiguiente.isEnabled = typeDocument.isNotEmpty() && documentoValido && birthdate.isNotEmpty() && acceptedTerms
     }
 
 }

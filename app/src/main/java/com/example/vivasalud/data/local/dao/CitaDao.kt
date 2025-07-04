@@ -6,16 +6,15 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.vivasalud.data.model.Cita
-import com.example.vivasalud.data.model.User
 
 @Dao
 interface CitaDao {
     @Insert
-    suspend fun insert(cita: Cita)
+    fun insert(cita: Cita)
     @Update
-    suspend fun update(cita: Cita)
+    fun update(cita: Cita)
     @Delete
-    suspend fun delete(cita: Cita)
+    fun delete(cita: Cita)
     @Query("SELECT * FROM tb_cita WHERE id = :id")
-    suspend fun getCitaById(id: Int): Cita?
+    fun getCitaById(id: Int): Cita?
 }

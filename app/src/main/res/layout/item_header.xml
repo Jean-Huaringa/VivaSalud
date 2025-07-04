@@ -20,7 +20,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@color/trasparent"
-            android:src="@drawable/ic_menubar"
+            android:src="@drawable/ic_person"
             app:tint="@color/blue"
             android:contentDescription="Boton menu" />
 

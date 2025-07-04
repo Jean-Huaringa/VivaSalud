@@ -115,17 +115,15 @@
             </LinearLayout>
 
             <LinearLayout style="@style/InputLinearLayoutStyle">
-
                 <TextView
                     style="@style/InputTextViewStyle"
                     android:text="@string/label_pais" />
 
-
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <com.example.vivasalud.ui.components.CustomAutoCompleteTextView
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/spPais"
-                        style="@style/AutoCompleteTextStyle"
+                        style="@style/MyEditTextStyle"
                         android:hint="@string/hint_pais" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -139,9 +137,9 @@
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
-                    <com.example.vivasalud.ui.components.CustomAutoCompleteTextView
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/spDepartamento"
-                        style="@style/AutoCompleteTextStyle"
+                        style="@style/MyEditTextStyle"
                         android:hint="@string/hint_departamento" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -156,9 +154,9 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
 
-                    <com.example.vivasalud.ui.components.CustomAutoCompleteTextView
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/spProvincia"
-                        style="@style/AutoCompleteTextStyle"
+                        style="@style/MyEditTextStyle"
                         android:hint="@string/hint_provincia" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -173,9 +171,9 @@
                 <com.google.android.material.textfield.TextInputLayout style="@style/MyTextInputLayoutStyle">
 
 
-                    <com.example.vivasalud.ui.components.CustomAutoCompleteTextView
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/spDistrito"
-                        style="@style/AutoCompleteTextStyle"
+                        style="@style/MyEditTextStyle"
                         android:hint="@string/hint_distrito" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>

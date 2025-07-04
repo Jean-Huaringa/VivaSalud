@@ -25,16 +25,16 @@
     <string name="hint_seguro">Selecciona un seguro</string>
 
     <string name="label_pais">País</string>
-    <string name="hint_pais">Elige un país</string>
+    <string name="hint_pais">Ingresa tu Pais</string>
 
     <string name="label_departamento">Departamento</string>
-    <string name="hint_departamento">Elige un departamento</string>
+    <string name="hint_departamento">Ingresa tu departamento</string>
 
     <string name="label_provincia">Provincia</string>
-    <string name="hint_provincia">Elige una provincia</string>
+    <string name="hint_provincia">Ingresa tu provincia</string>
 
     <string name="label_distrito">Distrito</string>
-    <string name="hint_distrito">Elige tu distrito</string>
+    <string name="hint_distrito">Ingresa tu distrito</string>
 
     <string name="label_domicilio">Domicilio</string>
     <string name="hint_domicilio">Ingresa tu domicilio</string>

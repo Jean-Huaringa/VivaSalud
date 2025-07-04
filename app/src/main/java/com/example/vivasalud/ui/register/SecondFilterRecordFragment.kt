@@ -11,15 +11,25 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
-import com.example.vivasalud.data.model.Usuario
+import com.example.vivasalud.data.local.database.AppDatabase
+import com.example.vivasalud.data.repository.UserRepository
+import com.example.vivasalud.data.viewModel.RegistroViewModel
+import com.example.vivasalud.data.viewModel.RegistroViewModelFactory
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
 
 class SecondFilterRecordFragment : Fragment() {
 
+    private val registroViewModel: RegistroViewModel by activityViewModels {
+        val dao = AppDatabase.getDatabase(requireContext()).userDao()
+        val repository = UserRepository(dao)
+        RegistroViewModelFactory(repository)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,22 +42,16 @@ class SecondFilterRecordFragment : Fragment() {
     private lateinit var etMaternalSurname: TextInputEditText
     private lateinit var etSexo: AutoCompleteTextView
     private lateinit var spSeguro: AutoCompleteTextView
-    private lateinit var spPais: AutoCompleteTextView
-    private lateinit var spDepartamento: AutoCompleteTextView
-    private lateinit var spProvincia: AutoCompleteTextView
-    private lateinit var spDistrito: AutoCompleteTextView
+    private lateinit var spPais: TextInputEditText
+    private lateinit var spDepartamento: TextInputEditText
+    private lateinit var spProvincia: TextInputEditText
+    private lateinit var spDistrito: TextInputEditText
     private lateinit var etDomicilio: TextInputEditText
     private lateinit var btnSiguiente: MaterialButton
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val usuario = arguments?.getParcelable<Usuario>("usuario")
-
-        usuario?.let {
-            Log.d("USUARIO", "Tipo doc: ${it.typeDocument}, Doc: ${it.numberDocument}, Fecha: ${it.birthdate}")
-
-        }
 
         etName = view.findViewById(R.id.etName)
         etPaternalSurname = view.findViewById(R.id.etPaternalSurname)
@@ -62,101 +66,31 @@ class SecondFilterRecordFragment : Fragment() {
         btnSiguiente = view.findViewById(R.id.btnSiguiente)
 
         btnSiguiente.setOnClickListener {
-            val name = etName.text.toString()
-            val paterno = etPaternalSurname.text.toString()
-            val materno = etMaternalSurname.text.toString()
-            val sexo = etSexo.text.toString()
-            val seguro = spSeguro.text.toString()
-            val pais = spPais.text.toString()
-            val departamento = spDepartamento.text.toString()
-            val provincia = spProvincia.text.toString()
-            val distrito = spDistrito.text.toString()
-            val domicilio = etDomicilio.text.toString()
+            registroViewModel.filtroRegistroDos(
+                name = etName.text.toString(),
+                apePat = etPaternalSurname.text.toString(),
+                apeMat = etMaternalSurname.text.toString(),
+                sexo = etSexo.text.toString(),
+                seguro = spSeguro.text.toString(),
+                pais = spPais.text.toString(),
+                departamento = spDepartamento.text.toString(),
+                provincia = spProvincia.text.toString(),
+                distrito = spDistrito.text.toString(),
+                home = etDomicilio.text.toString()
+            )
 
-            usuario?.let {
-                it.name = name
-                it.paternalSurname = paterno
-                it.maternalSurname = materno
-                it.sexo = sexo
-                it.seguro = seguro
-                it.pais = pais
-                it.department = departamento
-                it.province = provincia
-                it.district = distrito
-                it.home = domicilio
-            }
-
-            val bundle = Bundle().apply {
-                putParcelable("usuario_modificado", usuario)
-            }
-
-            findNavController().navigate(R.id.thirdFilterRecordFragment, bundle)
-
+            findNavController().navigate(R.id.thirdFilterRecordFragment)
         }
-
-
-        val sexo = listOf("Masculino", "Femenino", "Nose")
-        val adapterSexo = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, sexo)
-        etSexo.setAdapter(adapterSexo)
-
-        val seguros = listOf("Seguro 1", "Seguro 2", "Seguro 3")
-        val adapterSeguros = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, seguros)
-        spSeguro.setAdapter(adapterSeguros)
-
-        val paises = listOf("Perú", "Argentina", "Chile")
-        val adapterPaises = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, paises)
-        spPais.setAdapter(adapterPaises)
-
-        val departamentos = listOf("Lima", "Arequipa", "Cusco")
-        val adapterDepartamentos = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, departamentos)
-        spDepartamento.setAdapter(adapterDepartamentos)
-
-        val provincias = listOf("Lima", "Trujillo", "Arequipa")
-        val adapterProvincias = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, provincias)
-        spProvincia.setAdapter(adapterProvincias)
-
-        val distritos = listOf("Miraflores", "San Isidro", "Chorrillos", "San Juan de Lurigancho", "Los Olivos")
-        val adapterDistritos = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, distritos)
-        spDistrito.setAdapter(adapterDistritos)
-
-        /*
-        etSexo.setOnItemClickListener {parent, view, position, id ->
-            val seleccionado = parent.getItemAtPosition(position).toString()
-            etSexo.showDropDown()
-        }
-        */
+        etSexo.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("Masculino", "Femenino")))
+        spSeguro.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("SIS", "RIMAC", "MAPFPRE")))
 
         etSexo.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(etSexo.windowToken, 0)
+            ocultarTeclado(etSexo)
         }
-
         spSeguro.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(spSeguro.windowToken, 0)
+            ocultarTeclado(spSeguro)
+
         }
-
-        spPais.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(spPais.windowToken, 0)
-        }
-
-        spDepartamento.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(spDepartamento.windowToken, 0)
-        }
-
-        spProvincia.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(spProvincia.windowToken, 0)
-        }
-
-        spDistrito.setOnClickListener {
-            val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
-            im?.hideSoftInputFromWindow(spDistrito.windowToken, 0)
-        }
-
-
 
         etName.addTextChangedListener{ validarCampos() }
         etPaternalSurname.addTextChangedListener{ validarCampos() }
@@ -182,7 +116,6 @@ class SecondFilterRecordFragment : Fragment() {
         val distrito = spDistrito.text?.toString()?.trim().orEmpty()
         val domicilio = etDomicilio.text?.toString()?.trim().orEmpty()
 
-
         btnSiguiente.isEnabled = name.isNotEmpty() &&
                 paternalSurname.isNotEmpty() &&
                 maternalSurname.isNotEmpty() &&
@@ -193,6 +126,11 @@ class SecondFilterRecordFragment : Fragment() {
                 provincia.isNotEmpty() &&
                 distrito.isNotEmpty() &&
                 domicilio.isNotEmpty()
+    }
+
+    private fun ocultarTeclado(view: View) {
+        val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
+        im?.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
 }

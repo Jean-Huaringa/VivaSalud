@@ -1,23 +1,23 @@
 package com.example.vivasalud.data.repository
 
 import com.example.vivasalud.data.local.dao.UserDao
-import com.example.vivasalud.data.model.User
-import java.util.concurrent.Flow
+import com.example.vivasalud.data.model.Usuario
 
 class UserRepository(private val userDao: UserDao) {
-    //     fun getAllUsers(): Flow<List<User>> = userDao.getA
-    suspend fun insertUser(user:User){
+    suspend fun insertUser(user:Usuario){
         userDao.insert(user)
     }
-
-    suspend fun updateUser(user:User){
+    suspend fun updateUser(user:Usuario){
         userDao.update(user)
     }
 
-    suspend fun deleteUser(user:User){
+    suspend fun deleteUser(user:Usuario){
         userDao.delete(user)
     }
-    suspend fun getByIdUser(id:Int): User?{
+    suspend fun getByIdUser(id:Int): Usuario?{
         return userDao.getUserById(id)
+    }
+    suspend fun getUserByLogin(typeDocument: String, document: String, clave: String): Usuario? {
+        return userDao.login(typeDocument, document, clave)
     }
 }

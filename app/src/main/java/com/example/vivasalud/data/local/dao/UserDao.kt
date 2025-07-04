@@ -5,16 +5,18 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.vivasalud.data.model.User
+import com.example.vivasalud.data.model.Usuario
 
 @Dao
 interface UserDao {
     @Insert
-    suspend fun insert(user: User)
+    fun insert(user: Usuario)
     @Update
-    suspend fun update(user: User)
+    fun update(user: Usuario)
     @Delete
-    suspend fun delete(user: User)
-    @Query("SELECT * FROM tb_user WHERE id = :id")
-    suspend fun getUserById(id: Int): User?
+    fun delete(user: Usuario)
+    @Query("SELECT * FROM tb_usuario WHERE id = :id")
+    fun getUserById(id: Int): Usuario?
+    @Query("SELECT * FROM tb_usuario WHERE typeDocument = :typeDocument AND numberDocument = :numberDocument AND password = :password LIMIT 1")
+    fun login(typeDocument: String, numberDocument: String, password: String): Usuario?
 }
