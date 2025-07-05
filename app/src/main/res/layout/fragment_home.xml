@@ -26,6 +26,7 @@
             app:justifyContent="center">
 
             <com.example.vivasalud.ui.components.ItemCardView
+                android:id="@+id/btnAgendarCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

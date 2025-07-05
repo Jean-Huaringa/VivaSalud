@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/createCitaFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.cita.CreateCitaFragment"
         android:label="CreateCitaFragment">
         <action
             android:id="@+id/action_createCitaFragment_to_seleccionDoctorFragment"
@@ -61,23 +61,15 @@
 
     <fragment
         android:id="@+id/seleccionDoctorFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.cita.SeleccionDoctorFragment"
         android:label="SeleccionDoctorFragment">
-        <action
-            android:id="@+id/action_SeleccionDoctorFragment_to_SeleccionHorarioFragment"
-            app:destination="@id/seleccionHorarioFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/seleccionHorarioFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
-        android:label="SeleccionHorarioFragment">
         <action
             android:id="@+id/action_SeleccionDoctorFragment_to_ConfirmacionCitaFragment"
             app:destination="@id/confirmacionCitaFragment" />
     </fragment>
     <fragment
         android:id="@+id/confirmacionCitaFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.cita.ConfirmacionCitaFragment"
         android:label="ConfirmacionCitaFragment">
         <action
             android:id="@+id/action_ConfirmacionCitaFragment_to_ListCitaFragment"
@@ -87,7 +79,7 @@
 
     <fragment
         android:id="@+id/seleccionLugarFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.cita.SeleccionLugarFragment"
         android:label="SeleccionLugarFragment">
         <action
             android:id="@+id/action_SeleccionLugarFragment_to_SeleccionDoctorFragment"
@@ -96,7 +88,7 @@
 
     <fragment
         android:id="@+id/listCitaFragment"
-        android:name="com.example.vivasalud.ui.home.HomeFragment"
+        android:name="com.example.vivasalud.ui.cita.ListCitaFragment"
         android:label="ListCitaFragment">
     </fragment>
 

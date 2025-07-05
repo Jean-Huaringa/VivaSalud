@@ -5,4 +5,10 @@
         <attr name="cardDescription" format="string" />
         <attr name="cardImage" format="reference" />
     </declare-styleable>
+    <declare-styleable name="ItemCardWorkerView">
+        <attr name="cardWorkerTitle" format="string"/>
+        <attr name="cardName" format="string"/>
+        <attr name="cardLastname" format="string"/>
+    </declare-styleable>
+
 </resources>

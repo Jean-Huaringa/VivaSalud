@@ -10,10 +10,9 @@ import java.util.Date
 @Entity(tableName= "tb_cita")
 data class Cita(
     @PrimaryKey val id: Int,
-    var name: String = "",
-    var day: String = "",
-    var time: String = "",
+    var type: String = "",
     var area: String = "",
     var clinica: String = "",
-    var doctor: String = ""
+    var doctor: String = "",
+    val usuarioId: Int
 ) : Parcelable

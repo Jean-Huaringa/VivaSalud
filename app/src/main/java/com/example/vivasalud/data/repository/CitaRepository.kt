@@ -4,18 +4,21 @@ import com.example.vivasalud.data.local.dao.CitaDao
 import com.example.vivasalud.data.model.Cita
 
 class CitaRepository(private val citaDao: CitaDao) {
-    suspend fun insertUser(cita: Cita){
+    suspend fun insertCita(cita: Cita){
         citaDao.insert(cita)
     }
 
-    suspend fun updateUser(cita: Cita){
+    suspend fun updateCita(cita: Cita){
         citaDao.update(cita)
     }
 
-    suspend fun deleteUser(cita: Cita){
+    suspend fun deleteCita(cita: Cita){
         citaDao.delete(cita)
     }
-    suspend fun getByIdUser(id:Int): Cita?{
+    suspend fun getByIdCita(id:Int): Cita?{
         return citaDao.getCitaById(id)
+    }
+    suspend fun getCitaByIdUser(id:Int): List<Cita> {
+        return citaDao.getCitaByIdUser(id)
     }
 }
