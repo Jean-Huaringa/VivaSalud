@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.vivasalud.R
 import com.example.vivasalud.data.viewModel.RegistroViewModel
+import com.example.vivasalud.ui.components.ItemCardView
 import com.google.android.material.button.MaterialButton
 
 class HomeFragment : Fragment() {
@@ -18,6 +19,8 @@ class HomeFragment : Fragment() {
     private val registroViewModel: RegistroViewModel by activityViewModels()
 
     private lateinit var btnImagen: ImageButton
+    private lateinit var btnAgendarCita: ItemCardView
+    private lateinit var btnVerCitas: ItemCardView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,20 +30,25 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         btnImagen = view.findViewById(R.id.btnImagen)
+        btnAgendarCita = view.findViewById(R.id.btnAgendarCita)
+        btnVerCitas = view.findViewById(R.id.btnVerCitas)
 
         val headerTextView = view.findViewById<TextView>(R.id.headerTitle)
-
         registroViewModel.usuarioLogueado.observe(viewLifecycleOwner) { usuario ->
             usuario?.let {
                 headerTextView.text = "¡Hola ${it.name}!"
             }
         }
 
-        btnImagen.setOnClickListener{
+        btnImagen.setOnClickListener {
             findNavController().navigate(R.id.infoUserFragment)
-
+        }
+        btnAgendarCita.setOnClickListener {
+            findNavController().navigate(R.id.createCitaFragment)
+        }
+        btnVerCitas.setOnClickListener{
+            findNavController().navigate(R.id.listCitaFragment)
         }
 
     }

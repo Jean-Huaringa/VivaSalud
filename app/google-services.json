@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1012747172374",
+    "project_id": "proyectofirebase2-89f01",
+    "storage_bucket": "proyectofirebase2-89f01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012747172374:android:c3f230e68fb9b34ff19337",
+        "android_client_info": {
+          "package_name": "com.example.probandofirestoredatabase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEXJNrTDohFflwhvkJLtGPtFPH3Nj7lGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012747172374:android:4344d9dbe9a706f7f19337",
+        "android_client_info": {
+          "package_name": "com.example.vivasalud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEXJNrTDohFflwhvkJLtGPtFPH3Nj7lGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

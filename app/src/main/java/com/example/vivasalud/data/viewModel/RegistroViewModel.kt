@@ -17,7 +17,7 @@ class RegistroViewModel(private val repository: UserRepository): ViewModel() {
 
     private val _usuario = MutableLiveData(
         Usuario(
-            id = null,
+            id = 0,
             name = "",
             paternalSurname = "",
             maternalSurname = "",

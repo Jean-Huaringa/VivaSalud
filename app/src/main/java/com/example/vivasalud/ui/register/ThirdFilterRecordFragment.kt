@@ -37,7 +37,6 @@ class ThirdFilterRecordFragment : Fragment() {
     private lateinit var etRepetirClave: TextInputEditText
     private lateinit var btnRegistrar: MaterialButton
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -72,5 +71,4 @@ class ThirdFilterRecordFragment : Fragment() {
 
         }
     }
-
 }

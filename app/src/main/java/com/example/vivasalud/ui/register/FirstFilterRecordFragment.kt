@@ -22,8 +22,6 @@ import com.example.vivasalud.data.viewModel.RegistroViewModelFactory
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
-
-
 class FirstFilterRecordFragment : Fragment() {
 
     private val registroViewModel: RegistroViewModel by activityViewModels  {
@@ -31,7 +29,6 @@ class FirstFilterRecordFragment : Fragment() {
         val repository = UserRepository(dao)
         RegistroViewModelFactory(repository)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -96,5 +93,4 @@ class FirstFilterRecordFragment : Fragment() {
 
         btnSiguiente.isEnabled = typeDocument.isNotEmpty() && documentoValido && birthdate.isNotEmpty() && acceptedTerms
     }
-
 }

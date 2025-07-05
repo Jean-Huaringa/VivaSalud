@@ -19,6 +19,7 @@ import com.example.vivasalud.data.local.database.AppDatabase
 import com.example.vivasalud.data.repository.UserRepository
 import com.example.vivasalud.data.viewModel.RegistroViewModel
 import com.example.vivasalud.data.viewModel.RegistroViewModelFactory
+
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -30,6 +31,7 @@ class SecondFilterRecordFragment : Fragment() {
         val repository = UserRepository(dao)
         RegistroViewModelFactory(repository)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,8 +83,20 @@ class SecondFilterRecordFragment : Fragment() {
 
             findNavController().navigate(R.id.thirdFilterRecordFragment)
         }
-        etSexo.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("Masculino", "Femenino")))
-        spSeguro.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("SIS", "RIMAC", "MAPFPRE")))
+        etSexo.setAdapter(
+            ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                listOf("Masculino", "Femenino")
+            )
+        )
+        spSeguro.setAdapter(
+            ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                listOf("SIS", "RIMAC", "MAPFPRE")
+            )
+        )
 
         etSexo.setOnClickListener {
             ocultarTeclado(etSexo)
@@ -91,16 +105,16 @@ class SecondFilterRecordFragment : Fragment() {
             ocultarTeclado(spSeguro)
         }
 
-        etName.addTextChangedListener{ validarCampos() }
-        etPaternalSurname.addTextChangedListener{ validarCampos() }
-        etMaternalSurname.addTextChangedListener{ validarCampos() }
-        etSexo.addTextChangedListener{ validarCampos() }
-        spSeguro.addTextChangedListener{ validarCampos() }
-        spPais.addTextChangedListener{ validarCampos() }
-        spDepartamento.addTextChangedListener{ validarCampos() }
-        spProvincia.addTextChangedListener{ validarCampos() }
-        spDistrito.addTextChangedListener{ validarCampos() }
-        etDomicilio.addTextChangedListener{ validarCampos() }
+        etName.addTextChangedListener { validarCampos() }
+        etPaternalSurname.addTextChangedListener { validarCampos() }
+        etMaternalSurname.addTextChangedListener { validarCampos() }
+        etSexo.addTextChangedListener { validarCampos() }
+        spSeguro.addTextChangedListener { validarCampos() }
+        spPais.addTextChangedListener { validarCampos() }
+        spDepartamento.addTextChangedListener { validarCampos() }
+        spProvincia.addTextChangedListener { validarCampos() }
+        spDistrito.addTextChangedListener { validarCampos() }
+        etDomicilio.addTextChangedListener { validarCampos() }
     }
 
     private fun validarCampos() {
@@ -131,5 +145,4 @@ class SecondFilterRecordFragment : Fragment() {
         val im = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)
         im?.hideSoftInputFromWindow(view.windowToken, 0)
     }
-
 }

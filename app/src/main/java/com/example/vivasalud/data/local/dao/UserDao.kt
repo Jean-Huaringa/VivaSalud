@@ -19,4 +19,5 @@ interface UserDao {
     fun getUserById(id: Int): Usuario?
     @Query("SELECT * FROM tb_usuario WHERE typeDocument = :typeDocument AND numberDocument = :numberDocument AND password = :password LIMIT 1")
     fun login(typeDocument: String, numberDocument: String, password: String): Usuario?
+
 }
