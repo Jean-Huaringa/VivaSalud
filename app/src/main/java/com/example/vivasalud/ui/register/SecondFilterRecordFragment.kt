@@ -89,7 +89,6 @@ class SecondFilterRecordFragment : Fragment() {
         }
         spSeguro.setOnClickListener {
             ocultarTeclado(spSeguro)
-
         }
 
         etName.addTextChangedListener{ validarCampos() }

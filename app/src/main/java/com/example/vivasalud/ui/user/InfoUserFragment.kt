@@ -115,7 +115,6 @@ class InfoUserFragment : Fragment() {
                     .show()
             }
         }
-
     }
 
     
