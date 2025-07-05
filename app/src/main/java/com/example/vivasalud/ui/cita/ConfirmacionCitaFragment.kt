@@ -23,6 +23,7 @@ import com.example.vivasalud.data.viewModel.cita.CitaViewModel
 import com.example.vivasalud.data.viewModel.cita.CitaViewModelFactory
 import com.example.vivasalud.databinding.FragmentConfirmacionCitaBinding
 import com.example.vivasalud.databinding.FragmentListCitaBinding
+import com.google.android.material.button.MaterialButton
 import java.util.concurrent.LinkedBlockingQueue
 
 class ConfirmacionCitaFragment : Fragment() {
@@ -38,11 +39,12 @@ class ConfirmacionCitaFragment : Fragment() {
     private lateinit var nameDoctorTextView: TextView
     private lateinit var ubicationTextView: TextView
     private lateinit var namePacienteTextView: TextView
+    private lateinit var btnCrearCita:MaterialButton
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_create_cita, container, false)
+        return inflater.inflate(R.layout.fragment_confirmacion_cita, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,11 +54,21 @@ class ConfirmacionCitaFragment : Fragment() {
         nameDoctorTextView = view.findViewById(R.id.name_doctor)
         ubicationTextView = view.findViewById(R.id.ubication)
         namePacienteTextView = view.findViewById(R.id.name_paciente)
+        btnCrearCita = view.findViewById(R.id.btnCrearCita)
 
-        areaTextView.text = "Centro clínico San Borja - Cardiología"
-        nameDoctorTextView.text = "Dr. Pérez González, Juan 2"
-        ubicationTextView.text = "Centro clínico San Borja"
-        namePacienteTextView.text = "Carlos Alberto Ruiz"
+        citaViewModel.cita.observe(viewLifecycleOwner) { cita ->
+            areaTextView.text = cita.area
+            nameDoctorTextView.text = "${cita.doctor} (${cita.type})"
+            ubicationTextView.text = cita.clinica
+            namePacienteTextView.text = "Carlos Alberto Ruiz" // Ajusta esto si es necesario
+        }
+
+        btnCrearCita.setOnClickListener {
+            citaViewModel.insertCita()
+
+            Toast.makeText(context, "Cita confirmada", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.listCitaFragment)
+        }
 
     }
 

@@ -69,9 +69,8 @@ class SeleccionDoctorFragment : Fragment() {
 
                 // Configurar el adaptador del RecyclerView
                 medicoAdapter = MedicoAdapter(medicosList) { medico ->
-                    // Aquí puedes manejar el clic en el médico
-
-                    Toast.makeText(requireContext(), " ${medico.id}, ${medico.nombre}", Toast.LENGTH_SHORT).show()
+                    citaViewModel.seletDoctorCita(medico.nombre, medico.especialidad, medico.clinica)
+                    findNavController().navigate(R.id.confirmacionCitaFragment)
 
                 }
 

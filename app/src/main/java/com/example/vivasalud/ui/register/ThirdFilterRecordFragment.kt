@@ -23,32 +23,4 @@ class ThirdFilterRecordFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_third_filter_record, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val usuario = arguments?.getParcelable<User>("usuario_modificado")
-
-        val etClave = view.findViewById<TextInputEditText>(R.id.spClave)
-        val etRepetirClave = view.findViewById<TextInputEditText>(R.id.spRepeatClave)
-        val btnRegistrar = view.findViewById<MaterialButton>(R.id.btnRegistrar)
-
-
-        btnRegistrar.setOnClickListener {
-            val clave = etClave.text.toString()
-            val repetirClave = etRepetirClave.text.toString()
-
-            if (clave != repetirClave) {
-                Toast.makeText(requireContext(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            usuario?.let {
-                it.password = clave
-            }
-
-            findNavController().popBackStack(R.id.logInFragment, false)
-
-        }
-    }
-
 }

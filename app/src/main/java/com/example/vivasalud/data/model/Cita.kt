@@ -6,13 +6,13 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.util.Date
 
-@Parcelize
 @Entity(tableName= "tb_cita")
 data class Cita(
-    @PrimaryKey val id: Int,
-    var type: String = "",
-    var area: String = "",
-    var clinica: String = "",
-    var doctor: String = "",
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val type: String,
+    val area: String,
+    val clinica: String,
+    val doctor: String,
     val usuarioId: Int
-) : Parcelable
+)

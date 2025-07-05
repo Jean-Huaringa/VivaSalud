@@ -29,7 +29,7 @@ class ListCitaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_seleccion_doctor, container, false)
+        return inflater.inflate(R.layout.fragment_list_cita, container, false)
     }
 
 }

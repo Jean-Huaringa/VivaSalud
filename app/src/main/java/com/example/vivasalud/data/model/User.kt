@@ -6,23 +6,22 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
 @Entity(tableName= "tb_user")
 data class User(
-    @PrimaryKey(autoGenerate = true) var id: Long = 0,
-    var name: String = "",
-    var paternalSurname: String = "",
-    var maternalSurname: String = "",
-    var sexo: String = "",
-    var seguro: String = "",
-    var pais: String = "",
-    var department: String = "",
-    var province: String = "",
-    var district: String = "",
-    var home: String = "",
-    var typeDocument: String = "",
-    var numberDocument: String = "",
-    var birthdate: String = "",
-    var password: String = ""
-) : Parcelable
+    @PrimaryKey(autoGenerate = true) val id: Int=0,
+    val name: String,
+    val paternalSurname: String,
+    val maternalSurname: String,
+    val sexo: String,
+    val seguro: String,
+    val pais: String,
+    val department: String,
+    val province: String,
+    val district: String,
+    val home: String,
+    val typeDocument: String,
+    val numberDocument: String,
+    val birthdate: String,
+    val password: String
+)
 

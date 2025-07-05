@@ -26,6 +26,8 @@ class CitaViewModel(private val repository: CitaRepository) : ViewModel() {
         )
     )
 
+    val cita: LiveData<Cita> get() = _cita
+
     fun seletTypeCita(type: String) {
         _cita.value = _cita.value?.copy(
             type = type
@@ -55,11 +57,15 @@ class CitaViewModel(private val repository: CitaRepository) : ViewModel() {
         }
     }
 
-    fun insertCita(cita: Cita) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.insertCita(cita)
-            // Luego puedes actualizar las citas si es necesario
-            getCitaByIdUser(cita.usuarioId)
+
+    fun insertCita() {
+        val citaToInsert = _cita.value?.copy(id = 0)  // Asegurándote de que el id es 0 para autogenerarlo
+
+        citaToInsert?.let {
+            viewModelScope.launch(Dispatchers.IO) {
+                repository.insertCita(it) // Pasas la cita a la función de inserción
+                getCitaByIdUser(it.usuarioId) // Si es necesario, actualizar las citas del usuario
+            }
         }
     }
 
