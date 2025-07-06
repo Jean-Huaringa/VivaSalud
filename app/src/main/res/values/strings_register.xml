@@ -53,10 +53,4 @@
 
     <string name="btn_siguiente">Siguiente paso</string>
     <string name="btn_confirmar">Enviar</string>
-
-    <string-array name="hello_array" tools:ignore="ExtraTranslation">
-        <item>Peru</item>
-        <item>Argentina</item>
-        <item>Chile</item>
-    </string-array>
 </resources>

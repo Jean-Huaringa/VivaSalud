@@ -19,7 +19,6 @@ class ItemCardView @JvmOverloads constructor(
     init {
         inflate(context, R.layout.item_card, this)
 
-        // Opcional: personaliza el CardView
         radius = 30f
         cardElevation = 8f
         useCompatPadding = true
@@ -32,14 +31,23 @@ class ItemCardView @JvmOverloads constructor(
 
             val title = typedArray.getString(R.styleable.ItemCardView_cardTitle)
             val imageRes = typedArray.getResourceId(R.styleable.ItemCardView_cardImage, -1)
+            val titleColor = typedArray.getColor(R.styleable.ItemCardView_cardTitleColor, -1)
+            val imageColor = typedArray.getColor(R.styleable.ItemCardView_cardImageColor, -1)
 
+            // Establecer valores en las vistas
             if (title != null) txtTitle.text = title
             if (imageRes != -1) imgCard.setImageResource(imageRes)
+            if (titleColor != -1) txtTitle.setTextColor(titleColor)
+            if (imageColor != -1) imgCard.setColorFilter(imageColor)
 
             typedArray.recycle()
         }
     }
 
+
+
     fun setTitle(text: String) { txtTitle.text = text }
     fun setImage(resId: Int) { imgCard.setImageResource(resId) }
+    fun setTitleColor(color: Int) { txtTitle.setTextColor(color) }
+    fun setImageColor(color: Int) { imgCard.setColorFilter(color) }
 }

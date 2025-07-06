@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,43 +37,53 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                app:cardImage="@drawable/ic_menubar"
-                app:cardTitle="Agendar chequeo" />
+                app:cardImage="@drawable/ic_blockade"
+                app:cardTitle="Agendar chequeo"
+                app:cardImageColor="@color/dark"
+                app:cardTitleColor="@color/dark" />
 
             <com.example.vivasalud.ui.components.ItemCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                app:cardImage="@drawable/ic_menubar"
+                app:cardImage="@drawable/ic_blockade"
+                app:cardImageColor="@color/dark"
+                app:cardTitleColor="@color/dark"
                 app:cardTitle="Dr. Online" />
 
             <com.example.vivasalud.ui.components.ItemCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                app:cardImage="@drawable/ic_menubar"
+                app:cardImage="@drawable/ic_blockade"
+                app:cardImageColor="@color/dark"
+                app:cardTitleColor="@color/dark"
                 app:cardTitle="Medico a domicilio" />
 
             <com.example.vivasalud.ui.components.ItemCardView
                 android:id="@+id/btnVerCitas"
                 android:layout_width="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 app:cardImage="@drawable/ic_menubar"
                 app:cardTitle="Mis citas" />
 
             <com.example.vivasalud.ui.components.ItemCardView
                 android:layout_width="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_height="wrap_content"
-                app:cardImage="@drawable/ic_menubar"
+                android:layout_margin="5dp"
+                app:cardImage="@drawable/ic_blockade"
+                app:cardImageColor="@color/dark"
+                app:cardTitleColor="@color/dark"
                 app:cardTitle="Mis examenes" />
 
             <com.example.vivasalud.ui.components.ItemCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                app:cardImage="@drawable/ic_menubar"
+                app:cardImage="@drawable/ic_blockade"
+                app:cardImageColor="@color/dark"
+                app:cardTitleColor="@color/dark"
                 app:cardTitle="Grupo Familiar" />
 
         </com.google.android.flexbox.FlexboxLayout>
